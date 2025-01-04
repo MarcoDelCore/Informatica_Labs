@@ -1,0 +1,5 @@
+address.txt:Kris Kringle, North Pole
+address.txt:Homer Simpson, Springfield
+homework.py:string = "text"
+book.txt:There is only one Lord of the Ring, only one who can bend it to his will
+book.txt:The ring has awoken; it’s heard its masters call.

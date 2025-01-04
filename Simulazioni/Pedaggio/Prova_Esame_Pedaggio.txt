@@ -1,0 +1,65 @@
+# 2019-02-10_ta (simulazione d'esame)
+
+## Parte di Programmazione
+
+Si vuole realizzare un programma Python che calcoli il pedaggio autostradale. 
+Nel file `pedaggi.txt` sono contenute, una per riga, le tariffe tra caselli consecutivi per una data tratta autostradale.
+Ogni riga ha il seguente formato: 
+casello1;casello2;tariffa
+
+Si facciano le seguenti assunzioni:
+ 
+1.    Il numero di righe contenute nel file non è noto a priori, ma non può essere maggiore di 25
+2.    I nomi dei caselli non possono contenere spazi e sono lunghi, al massimo, 20 caratteri
+3.    L’importo è un valore reale
+4.    Non è garantito nessun “ordine” nella memorizzazione delle tratte nel file dei pedaggi, ovvero se una riga riporta la tariffa tra 
+      Torino;Chivasso;3.50 non è detto che la riga successiva riporti la tratta tra Chivasso e il casello successivo.
+
+
+Inoltre, il file è da intendersi privo di ambiguità (es. lo stesso casello di entrata non compare più volte con diversi caselli di uscita).
+
+Scrivere un programma che, dati i nomi dei caselli di ingresso e uscita da tastiera, stabilisca:
+
+1)  Se sia possibile raggiungere il casello di uscita direttamente dal casello di partenza. 
+    Indicare anche la spesa per effettuare il percorso (arrotondando a due cifre decimali);
+
+2)  In caso contrario indicare se e’ possibile a raggiungere il casello di uscita da quello di partenza percorrendo al massimo 3 tratte. Indicare in questo caso
+        a.      Il numero di tratte percorse
+        b.      La spesa complessiva (arrotondando a due cifre decimali);
+
+3)     Se non è possibile ultimare il percorso con un tragitto di massimo di 3 tratte.
+ 
+N.B. se il casello di ingresso e/o quello di uscita non sono contemplati nel file dei pedaggi, o 
+se il casello di ingresso coincide con quello di uscita, 
+il programma deve restituire un messaggio di errore.
+
+
+### Esempio
+
+Come esempio si consideri il seguente file 'pedaggi.txt' che descrive i caselli di un’ipotetica autostrada tra Torino e Milano:
+
+```
+Torino;Chivasso;3.50
+Santhia;Vercelli;2.50
+Chivasso;Santhia;3.25
+Magenta;Rho;5.50
+Novara;Magenta;3.00
+Rho;Milano;4.35
+Vercelli;Novara;1.20
+
+```
+
+Il programma dovrà generare in output:
+
+```
+** Inserisci i due caselli **
+   >Santhia;Magenta
+        Destinazione raggiunta in 3 tratte. Spesa complessiva: 6.70 euro
+** Inserisci i due caselli **
+   >Torino;Santhia
+        Destinazione raggiunta in 2 tratte. Spesa complessiva: 6.75 euro
+** Inserisci i due caselli **
+   >Santhia;Rho
+        Impossibile raggiungere la destinazione percorrendo un massimo di 3 tratte.
+```
+
